@@ -146,7 +146,7 @@ Total: 3 × 3 × 3 = 27 combinações testadas para encontrar a melhor.
 ### Métricas Calculadas
 
 **R² (Coeficiente de Determinação)**
-Indica qual percentual da variação de preços o modelo consegue explicar. Varia de 0 a 1, onde 1 é perfeito. Nossos modelos atingem aproximadamente 0.83-0.87.
+Indica qual percentual da variação de preços o modelo consegue explicar. Varia de 0 a 1, onde 1 é perfeito. Os modelos atingem aproximadamente 0.83-0.87.
 
 **MAPE (Mean Absolute Percentage Error)**
 Erro percentual médio em relação ao preço real. NVDA: 44.57%, MELI: 9.94%, NU: 13.48%.
@@ -175,18 +175,6 @@ A API carrega os arquivos:
 - `models/{SYMBOL}/metrics.json`: métricas
 - `data/raw/{SYMBOL}/scaler.pkl`: normalizador
 
-## Próximas Melhorias
-
-Possíveis melhorias futuras para o pipeline:
-
-1. Aumentar o período de dados (3-5 anos em vez de 11 meses)
-2. Adicionar features técnicas (RSI, MACD, Bollinger Bands)
-3. Implementar ensemble de modelos ao invés de um único LSTM
-4. Usar redes neurais mais avançadas (Transformer, Attention)
-5. Implementar retrainamento automático com dados novos
-6. Adicionar análise de sentimento de notícias como feature
-7. Usar walk-forward validation ao invés de split simples treino/teste
-
 ## Troubleshooting
 
 ### Erro ao baixar dados do Yahoo Finance
@@ -212,10 +200,3 @@ Certificar-se de que:
 - Cada etapa completou sem erros
 - Os diretórios data/ e models/ existem
 
-## Autor e Histórico
-
-Desenvolvido como parte do FIAP Tech Challenge 4 em Maio de 2026.
-
-## Licença
-
-Este projeto foi desenvolvido para fins educacionais no contexto do FIAP Tech Challenge.
