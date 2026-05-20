@@ -141,6 +141,36 @@ O treinamento utiliza Grid Search com os seguintes hiperparâmetros:
 
 Total: 3 × 3 × 3 = 27 combinações testadas para encontrar a melhor.
 
+### Entendendo o Sinal de Trading (Simplificado)
+O Que é Sinal de Trading?
+É uma recomendação simples para o trader:
+
+⬆️ ALTA: Compre! O modelo prevê que o preço vai subir
+⬇️ BAIXA: Venda! O modelo prevê que o preço vai cair
+➡️ NEUTRO: Espere! A previsão está muito próxima ao preço atual
+Como É Calculado?
+Preço Atual:        $100.00
+Preço Previsto:     $101.50
+Diferença:          $1.50
+Percentual:         1.50%
+
+Regra:
+  Se % > 1%   → ALTA     (vale a pena comprar)
+  Se % < -1%  → BAIXA    (cuidado, pode cair)
+  Se -1% ≤ % ≤ 1% → NEUTRO  (muito incerto)
+
+Exemplo Real (MELI)
+Preço Atual:        $1649.99
+Preço Previsto:     $1655.37
+Diferença:          $5.38
+Percentual:         0.33%
+
+Resultado: NEUTRO (0.33% está entre -1% e +1%)
+
+Interpretação:
+"O modelo prevê leve subida, mas não o suficiente para ser
+confiável. O risco/recompensa não justifica uma ação."
+
 ## Métricas de Desempenho
 
 ### Métricas Calculadas
@@ -165,6 +195,13 @@ Percentual de vezes que o modelo acerta corretamente a direção do movimento (s
 Os modelos apresentam bom desempenho em capturar a variação de preços (R² alto), mas com margem de erro significativa nas previsões absolutas (MAPE 10-45%). A acurácia direcional moderada (ligeiramente melhor que acaso) sugere que os modelos não devem ser usados como única fonte de decisão em trading.
 
 O modelo para MELI apresenta o melhor desempenho geral (MAPE mais baixo), seguido por NVDA. O modelo para NU tem desempenho mais fraco, indicando que o LSTM não é adequado para stocks altamente voláteis e com pouco histórico.
+
+MELI (Melhor modelo):
+- MAPE: 9.97%           ← Acerta dentro de ±10% (BOM!)
+- R²: 0.17              ← Explica 17% da variação (OKAY)
+- Dir. Accuracy: 53.2%  ← Acerta direção em 53% (pouco melhor que acaso)
+
+Conclusão: MELI é o melhor, mas ainda não é confiável para trading real
 
 ## Integração com Produção
 
