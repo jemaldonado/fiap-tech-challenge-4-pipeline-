@@ -1,0 +1,11 @@
+{
+  "symbol": "MELI",
+  "mae_normalized": 0.020951543400010472,
+  "rmse_normalized": 0.027882680735791286,
+  "mape": 9.937872001095844,
+  "mae_real": 114.07353542554142,
+  "rmse_real": 142.22216525276554,
+  "r_squared": -279.06126328153425,
+  "directional_accuracy": 0.4675324675324675,
+  "n_test_samples": 155
+}
